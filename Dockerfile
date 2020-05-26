@@ -52,5 +52,7 @@ WORKDIR ${DEPLOY_DIR}
 ADD requirements/base.txt requirements/base.txt
 RUN pip3 install -r requirements/base.txt
 
+COPY . /root/mysite/
+
 # Set entrypoint
 ENTRYPOINT ["/bin/bash", "scripts/init_mysite.sh"]
